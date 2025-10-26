@@ -208,7 +208,17 @@ importFile.addEventListener("change", e => {
   if (file) importFromJsonFile(file);
 });
 categoryFilter.addEventListener("change", filterQuotes);
-
+function createAddQuoteForm() {
+  const form = document.createElement("div");
+  form.innerHTML = `
+    <input type="text" id="newQuoteText" placeholder="Enter new quote" />
+    <input type="text" id="newQuoteCategory" placeholder="Category" />
+    <button id="addQuoteBtn">Add Quote</button>
+  `;
+  document.body.appendChild(form);
+  console.log("Add Quote form created dynamically.");
+};
+createAddQuoteForm();
 init();
 /* --- Sync & Conflict Module for Dynamic Quote Generator --- */
 
