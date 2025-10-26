@@ -468,3 +468,13 @@ function mockServerPost(localQuotes) {
     }, 500);
   });
 }
+async function syncQuotes() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const serverQuotes = await response.json();
+
+    console.log("Fetched quotes from server:", serverQuotes.slice(0, 3)); // just preview first 3
+  } catch (error) {
+    console.error("Error syncing quotes:", error);
+  }
+}
