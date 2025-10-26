@@ -235,7 +235,7 @@ function ensureQuoteFields(q) {
 }
 
 // Helper: load server quotes (try real fetch, otherwise use mock)
-async function fetchServerQuotes() {
+async function fetchQuotesFromServer() {
   try {
     const resp = await fetch(SERVER_URL, { method: "GET" });
     if (!resp.ok) throw new Error("Server responded " + resp.status);
