@@ -213,7 +213,7 @@ init();
 /* --- Sync & Conflict Module for Dynamic Quote Generator --- */
 
 // CONFIG: set your server endpoint here (must support GET /quotes and POST /quotes for a real server)
-const SERVER_URL = "https://example.com/api/quotes"; // replace when you have a real API
+const SERVER_URL = "https://jsonplaceholder.typicode.com/posts"; // replace when you have a real API
 const POLL_INTERVAL_MS = 30_000; // 30 seconds polling
 
 // DOM refs for sync UI
