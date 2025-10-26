@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dynamic Quote Generator (with Category Filter)</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 30px; background: #f5f7fb; }
+    #quoteDisplay { margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; width: 70%; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .category { color:#666; font-size:0.9rem; margin-top:8px; }
+    .controls, .filter-section { margin: 10px 0; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    input[type="text"], select { padding:8px; width:220px; border-radius:6px; border:1px solid #ddd; }
+    button { padding:8px 14px; border:none; border-radius:6px; cursor:pointer; background: #2b8cff; color:#fff; }
+    button.secondary { background:#666; }
+    #quoteList { margin-top:16px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left; }
+    .quote-item { background:#fff; padding:10px; border-radius:6px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:flex-start; gap:10px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+    .quote-text { font-style:italic; }
+    .quote-actions button { margin-left:6px; background:#e74c3c; }
+    .quote-actions button.edit { background:#f1c40f; color:#000; }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Quote Generator</h1>
+
+  <!-- 🔽 Category Filter -->
+  <div class="filter-section">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+  </div>
+
+  <div id="quoteDisplay">Loading quotes...</div>
+
+  <div class="controls">
+    <button id="newQuote">Show New Quote</button>
+    <button id="exportBtn">Export JSON</button>
+    <input type="file" id="importFile" accept=".json" />
+  </div>
+
+  <div style="margin-top:20px;">
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button id="addQuoteBtn">Add Quote</button>
+  </div>
+
+  <h3 style="margin-top:28px;">All Quotes</h3>
+  <div id="quoteList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
